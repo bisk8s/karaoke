@@ -6,7 +6,8 @@ class SongController {
     const id = _.get(request.params, 'id', '')
     const uri = `http://www.youtube.com/watch?v=${id}`
 
-    const video = ytdl.getURLVideoID(uri, { filter: format => format.container === 'mp4' })
+    const info = await ytdl.getInfo(uri, { filter: format => format.container === 'mp4' })
+    const video = _.first(_.filter(info.formats, format => format.container === 'mp4'))
 
     response.render('Song', { video })
   }
