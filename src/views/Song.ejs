@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../components/head'); %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../components/header'); %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <video id="movie" width="460" height="306" preload autoplay>
+                <source src="/<%-id%>.mp4" type='video/mp4'>
+            </video>
+        </div>
+    </main>
+    <footer>
+        <%- include('../components/footer'); %>
+    </footer>
+</body>
+
+</html>

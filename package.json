@@ -1,0 +1,28 @@
+{
+  "name": "karaoke",
+  "version": "1.0.0",
+  "description": "Karaoke system with scoring system",
+  "main": "src/index.js",
+  "repository": "https://github.com/bisk8s/karaoke",
+  "author": "Guilherme Lucena",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node src/index.js",
+    "start:watch": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "youtube-search": "^1.1.4",
+    "ytdl-core": "^4.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1"
+  }
+}
