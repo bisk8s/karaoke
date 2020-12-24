@@ -6,12 +6,12 @@ const _ = require('lodash')
 class PlaylistController {
   static async index (request, response) {
     const opts = {
-      maxResults: 15,
+      maxResults: 100,
       key: 'AIzaSyCCps0th9RJDZkeEBeLfsXgdCdOoscPcYM'
     }
 
-    const query = _.get(request.params, 'query', '')
-    youtubeSearch('karaoke' + query, opts, (err, results) => {
+    const keywords = _.get(request.query, 'keywords', 'melhores')
+    youtubeSearch('karaoke+' + keywords, opts, (err, results) => {
       if (err) return console.log(err)
 
       const songs = _.map(results, (song) => `<li><a href="/song/${song.id}">${song.title}</a></li>`).join('')
