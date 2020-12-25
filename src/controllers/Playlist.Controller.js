@@ -1,13 +1,15 @@
 const youtubeSearch = require('youtube-search')
 const _ = require('lodash')
-// const fs = require('fs')
-// const youtubedl = require('youtube-dl')
+require('dotenv').config()
 
 class PlaylistController {
   static async index (request, response) {
+    // server.js
+    const key = process.env.YOUTUBE_API_KEY
+
     const opts = {
       maxResults: 100,
-      key: 'AIzaSyCCps0th9RJDZkeEBeLfsXgdCdOoscPcYM'
+      key
     }
 
     const keywords = _.get(request.query, 'keywords', 'melhores')
