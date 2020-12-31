@@ -17,7 +17,7 @@
                 </video>
             </div>
             <div class="d-flex justify-content-center">
-                <audio id='singer' controls width="100%"></audio>
+                <audio id='singer'></audio>
             </div>
         </div>
         <%- include('../components/header'); %>
@@ -94,18 +94,18 @@
             source.connect(filter);
             filter.connect(context.destination);
 
-            filter.frequency.value = 95;
+            // filter.frequency.value = 95;
 
             mediaRecorder = new MediaRecorder(mediaStream)
             mediaRecorder.start();
 
             mediaRecorder.ondataavailable = function (e) {
                 const total = e.data.size;
-                $('#score-text').counter(0, total, 2000);
+                $('#score-text').counter(0, total, 3000);
             }
 
             singer.onloadedmetadata = function (e) {
-                singer.play();
+                // singer.play();
             };
         });
 
